@@ -22,7 +22,7 @@ namespace Container_Testing
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddDbContext<ETicketingContext>(
-                options => options.UseSqlServer(builder.Configuration.GetConnectionString("ETicketingServiceConn"))
+                options => options.UseNpgsql(builder.Configuration.GetConnectionString("ETicketingServiceConn"))
             );
 
             builder.Services.AddDistributedMemoryCache();
