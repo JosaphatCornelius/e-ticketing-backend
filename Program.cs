@@ -19,7 +19,6 @@ namespace Container_Testing
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
 
             builder.Services.AddDbContext<ETicketingContext>(
                 options => options.UseNpgsql(builder.Configuration.GetConnectionString("ETicketingServiceConn"))
@@ -51,7 +50,6 @@ namespace Container_Testing
 
             var app = builder.Build();
 
-
             var defaultCulture = new CultureInfo("id-ID");
             var localizationOptions = new RequestLocalizationOptions
             {
@@ -59,13 +57,6 @@ namespace Container_Testing
                 SupportedCultures = new List<CultureInfo> { defaultCulture },
                 SupportedUICultures = new List<CultureInfo> { defaultCulture }
             };
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
 
             app.UseHttpsRedirection();
 
