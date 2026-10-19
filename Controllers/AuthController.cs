@@ -2,7 +2,6 @@
 using Container_Testing.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 
 namespace Container_Testing.Controllers
@@ -26,7 +25,7 @@ namespace Container_Testing.Controllers
             {
                 ResponseModels<UserModels> response = new();
 
-                if (inputUserData.UserEmail.IsNullOrEmpty() || inputUserData.UserPassword.IsNullOrEmpty())
+                if (string.IsNullOrEmpty(inputUserData.UserEmail) || string.IsNullOrEmpty(inputUserData.UserPassword))
                 {
 
                     return BadRequest(new ResponseModels<UserModels>
