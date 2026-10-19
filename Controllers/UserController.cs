@@ -1,9 +1,7 @@
-﻿using Azure;
-using Container_Testing.Models;
+﻿using Container_Testing.Models;
 using Container_Testing.Models.Context;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Container_Testing.Controllers
 {
@@ -27,7 +25,7 @@ namespace Container_Testing.Controllers
 
                 var users = await _eTicketingContext.CatalogUser.AsNoTracking().ToListAsync();
 
-                if (users.IsNullOrEmpty())
+                if (users == null || users.Count == 0)
                 {
                     return NotFound(new ResponseModels<UserModels>
                     {

@@ -2,7 +2,6 @@
 using Container_Testing.Models.Context;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Container_Testing.Controllers
 {
@@ -80,7 +79,7 @@ namespace Container_Testing.Controllers
 
                 inputFlightData.FlightID = newFlightData.FlightID;
 
-                if (inputFlightData.AirlineID.IsNullOrEmpty() || await _eTicketingContext.CatalogAirline.AsNoTracking().FirstOrDefaultAsync(x => x.AirlineID.Equals(inputFlightData.AirlineID)) == null)
+                if (string.IsNullOrEmpty(inputFlightData.AirlineID) || await _eTicketingContext.CatalogAirline.AsNoTracking().FirstOrDefaultAsync(x => x.AirlineID.Equals(inputFlightData.AirlineID)) == null)
                 {
                     return NotFound(new ResponseModels<FlightModels>
                     {

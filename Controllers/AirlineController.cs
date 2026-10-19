@@ -2,7 +2,6 @@
 using Container_Testing.Models.Context;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Container_Testing.Controllers
 {
@@ -26,7 +25,7 @@ namespace Container_Testing.Controllers
 
                 var airlines = await _eTicketingContext.CatalogAirline.AsNoTracking().ToListAsync();
 
-                if (airlines.IsNullOrEmpty())
+                if (airlines == null || airlines.Count == 0)
                 {
                     return NotFound(new ResponseModels<AirlineModels>
                     {
