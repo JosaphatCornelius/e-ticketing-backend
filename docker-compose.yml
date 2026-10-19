@@ -1,0 +1,26 @@
+services:
+  website:
+    image: ${REGISTRY}/${NAMESPACE}/${CONTAINER_NAME}:${DOCKER_TAG:-latest}
+    container_name: ${CONTAINER_NAME}
+    pull_policy: always
+    environment:
+      APP_ENV: ${ASPNETCORE_ENVIRONMENT:-Production}}
+    # for manual build
+    # build: 
+    #   context: . 
+    #   dockerfile: dockerfile
+    restart: always
+    networks:
+      - apisix_backend
+    configs:
+      - source: appsettings
+        target: /app/appsettings.Production.json
+        mode: 0444   # readable by the non-root $APP_UID user
+
+networks:
+  apisix_backend:
+    external: true
+
+configs:
+  appsettings:
+    environment: APPSETTINGS_JSON
