@@ -9,7 +9,9 @@ namespace Container_Testing.Models
         [Key]
         public string? FlightID { get; set; } = Guid.NewGuid().ToString();
         public string? FlightDestination { get; set; }
+        [Column(TypeName = "timestamp without time zone")]
         public DateTime? FlightTime { get; set; }
+        [Column(TypeName = "timestamp without time zone")]
         public DateTime? FlightArrival { get; set; }
         public string? FlightFrom { get; set; }
         public string? AirlineID { get; set; }
