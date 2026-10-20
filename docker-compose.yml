@@ -12,6 +12,7 @@ services:
     restart: always
     networks:
       - apisix_backend
+      - database_net
     configs:
       - source: appsettings
         target: /app/appsettings.Production.json
@@ -19,6 +20,8 @@ services:
 
 networks:
   apisix_backend:
+    external: true
+  database_net:
     external: true
 
 configs:
