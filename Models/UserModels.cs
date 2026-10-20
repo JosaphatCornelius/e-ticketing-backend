@@ -13,6 +13,7 @@ namespace Container_Testing.Models
         public string? UserRole { get; set; }
         public string? UserEmail { get; set; }
         public string? UserAddress { get; set; }
+        [Column(TypeName = "timestamp without time zone")]
         public DateTime? Birthday { get; set; }
     }
 }

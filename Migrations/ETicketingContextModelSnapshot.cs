@@ -75,7 +75,7 @@ namespace Container_Testing.Migrations
                         .HasColumnType("integer");
 
                     b.Property<DateTime?>("FlightArrival")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("FlightDestination")
                         .HasColumnType("text");
@@ -90,7 +90,7 @@ namespace Container_Testing.Migrations
                         .HasColumnType("integer");
 
                     b.Property<DateTime?>("FlightTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.HasKey("FlightID");
 
@@ -103,7 +103,7 @@ namespace Container_Testing.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("Birthday")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("UserAddress")
                         .HasColumnType("text");
