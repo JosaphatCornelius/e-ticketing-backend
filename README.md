@@ -1,6 +1,6 @@
-# [E-Ticketing-Backend]
+# e-ticketing-backend
 
-Build Status is Deployed in Personal VPS
+Build Status: Deployed
 
 The backend that connects to the frontend that I made back in senior high school. There's many things to improve in this backend.
 
