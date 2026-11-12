@@ -6,18 +6,18 @@ The backend that connects to the frontend that I made back in senior high school
 
 ## Tech Stack
 
-* **Core:** [React, ASP .NET Core]
-* **Database:** [PostgreSQL, Entity Framework Core]
-* **Infrastructure:** [Docker]
+- **Core:** [ASP .NET Core]
+- **Database:** [PostgreSQL, Entity Framework Core]
+- **Infrastructure:** [Docker]
 
 ## Quick Start
 
 Instructions to get the development environment running locally.
 
-```bash
+```
 # Clone the repository
 git clone https://github.com/JosaphatCornelius/e-ticketing-backend.git
-cd project-name
+cd e-ticketing-backend
 
 # Install dependencies and run
 dotnet run
@@ -25,12 +25,11 @@ dotnet run
 
 ## Usage
 
-```dotnet
+```
 dotnet run
 ```
 
 ## Contributing & License
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Distributed under the [License Name] License. See `LICENSE` for more information.
+Currently unlicensed. All rights reserved.
